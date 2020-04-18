@@ -15,11 +15,14 @@ public class ParanthesisMatching1{
 			System.out.println("Not Balanced");
 	}
 	public static boolean isBalance(String s){
+		//Creating a LinkedList
 		LinkedList list=new LinkedList();
 		for(char ch:s.toCharArray()){
+			//if any open brackets comes then we wil push them into stack
 			if ((ch=='(')||(ch=='{')||(ch=='['))
 				list.push(ch);
 			else{
+			//if we found same closing brackets at top then we will pop out else return false i.e it is not balances
 			if (((ch==')')&&(list.stackTop()==(int)'('))||((ch==']')&&(list.stackTop()==(int)'['))||((ch=='}')&&(list.stackTop()==(int)'{')))
 				list.pop();
 			else
